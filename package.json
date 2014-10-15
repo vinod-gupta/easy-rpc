@@ -1,0 +1,28 @@
+{
+  "name": "easy-rpc",
+  "version": "0.0.3",
+  "description": "easy rpc using redis in background",
+  "main": "index.js",
+  "scripts": {
+    "start": "coffee -o lib -c src",
+    "poststart":"npm test",
+    "test": "node test/smoke_test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://vinod-gupta@github.com/vinod-gupta/easy-rpc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vinod-gupta/easy-rpc/issues"
+  },
+  "homepage": "https://github.com/vinod-gupta/easy-rpc",
+  "dependencies": {
+    "redis": "^0.12.1",
+    "underscore": "^1.7.0"
+  },
+  "devDependencies": {
+    "coffee": "0.0.1"
+  }
+}
