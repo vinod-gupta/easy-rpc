@@ -34,12 +34,12 @@ class EasyRpc extends emitter
           @remote_api_list = message_object.params.api_list
           _.each @remote_api_list,(remote_api)=>
             EasyRpc::[remote_api] = (params,callback)=>
-              @redisClientR.incr 'easyrpc_ApiResponseCounter',(err,id) =>
+              @redisClientS.incr 'easyrpc_ApiResponseCounter',(err,id) =>
                 if err
-                  callback err,null
+                  if callback then callback err,null
                   return
                 
-                @api_response_pending[id] = callback
+                if callback then @api_response_pending[id] = callback
                 @sendMessages
                   jsonrpc: defaultApiVersion
                   method: 'ApiPost'

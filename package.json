@@ -1,6 +1,6 @@
 {
   "name": "easy-rpc",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "easy rpc using redis in background",
   "main": "index.js",
   "scripts": {
